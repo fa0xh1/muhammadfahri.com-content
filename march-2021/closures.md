@@ -2,7 +2,7 @@
 title: "Closures"
 cover: "8.jpg"
 date: "2021-03-10"
-categories: ["intermediate", "populer"]
+categories: ["intermediate", "popular"]
 slug: "closures"
 tags:
   - javascript
