@@ -20,34 +20,41 @@ Hoisting jika diartikan kedalam bahasa indonesia artinya "mengangkat,mengerek at
 Sebagai contoh :
 
 ```javascript
-console.log(hello) // undefined
+// undefined
+console.log(hello)
 var hello = "Hello World"
 ```
 
 Codingan diatas akan menghasilkan log berupa `undefined`, kenapa `undefined`? pasti kalian berfikir karena javascript membaca `console.log` terlebih dahulu dan tidak mengenali `var hello` sehingga outputnya `undefined`, tentu saja itu kesalahan besar karena jika `console.log` tidak mengenali `var hello` maka akan terjadi log error ketika kita menjalankan program diatas sebagai contoh:
 
 ```javascript
-console.log(hello) // akan terjadi error 'Uncaught ReferenceError: hello is not defined at sample.js:1' karena console.log tidak mengenali variabel hello alias javascript membaca jika variabel hello tidak di definisikan
+/* akan terjadi error 'Uncaught ReferenceError: hello is not defined at sample.js:1' karena console.log tidak mengenali variabel hello alias javascript membaca jika variabel hello tidak di definisikan */
+
+console.log(hello)
 ```
 
 Lalu kenapa codingan sebelumnya menghasilkan log `undefined` nah itu lah yang disebut Hoisting, jadi ketika program dieksekusi ia akan memindahkan seluruh deklarasi `variabel' ke atas seperti berikut.
 
 ```javascript
-var hello // yang terjadi sebenarnya deklarasi variabel hello dipindahkan keatas seperti ini, tapi ingat hanya deklarasinya saja tanpa inisiasi sehingga inisiasi variabelnya 'undefined'
+/* yang terjadi sebenarnya deklarasi variabel hello dipindahkan keatas seperti ini, tapi ingat hanya deklarasinya saja tanpa inisiasi sehingga inisiasi variabelnya 'undefined' */
+var hello
 console.log(hello) //undifined
-var hello = "Hello World" // meninisiasikan variabel
+var hello = "Hello World" // menginisiasikan variabel
 ```
 
 Lalu bagaimana dengan `function` ? yups `function` juga deklarasinya akan dipindahkan keatas sebagai contoh:
 
 ```javascript
-console.log(HelloFriend) // lognya akan mengeluarkan deklarasi function itu sendiri dalam contoh disini outputnya berupa
-/*
+console.log(HelloFriend)
+/* lognya akan mengeluarkan deklarasi function itu sendiri dalam contoh disini outputnya berupa :
+
 ƒ HelloFriend() {
     console.log(hello);
 }
 */
-console.log(HelloFriend()) // jika kita jalankan functionnya maka outputnya akan 'isi variabel :undefined' karena variabel hello tidak terinisiasi akibat terkena hoisting,
+
+/* jika kita jalankan functionnya maka outputnya akan 'isi variabel :undefined' karena variabel hello tidak terinisiasi akibat terkena hoisting */
+console.log(HelloFriend())
 
 var hello = "Hello World"
 function HelloFriend() {
@@ -58,7 +65,8 @@ function HelloFriend() {
 Perbedaan penting antara deklarasi `function` (function declarations) dan deklarasi `class` (class declarations) adalah deklarasi function hoisted dan deklarasi class tidak. Pertama-tama kita harus mendeklarasikan class dan mengaksesnya, jika tidak maka code seperti berikut akan menampilkan ReferenceError:
 
 ```javascript
-var hello = new Hello() // reference error karena kelas tidak terhoisting dengan kata lain deklarasi class tidak di hoisting saat dijalankan
+/* reference error karena kelas tidak terhoisting dengan kata lain deklarasi class tidak di hoisting saat dijalankan */
+var hello = new Hello()
 class Hello {}
 ```
 
@@ -97,13 +105,16 @@ Sebenarnya jika kita liat di visualiasinya pada saat menjalankan function dia se
 var nama = "Muhammad Fahri" //inisiasi variabel nama
 var username = "0xft1h" // inisiasi variabel username
 
+//menambahkan argumen username pada function
 function cetakURL(username) {
-  //menambahkan argumen username pada function
-  var saweriaURL = "https://saweria.co/" //inisiasi variabel saweriaURL
-  return saweriaURL + username // mengembalikan saweriaURL dan menambahkannya dengan variabel username
+  //inisiasi variabel saweriaURL
+  var saweriaURL = "https://saweria.co/"
+  /* mengembalikan saweriaURL dan menambahkannya dengan variabel username */
+  return saweriaURL + username
 }
 
-console.log(cetakURL(username)) // memanggil function cetakURL dan mengisi argumennya dengan variabel username
+/* memanggil function cetakURL dan mengisi argumennya dengan variabel username */
+console.log(cetakURL(username))
 ```
 
 Sekilas jika kita jalankan code diatas tidak error dan memang tidak ada masalah dari code diatas tapi code diatas akan kita gunakan untuk memahami local `Execution Context`. Mari kita liat visualisasi dari code diatas.
@@ -122,25 +133,33 @@ Sekilas jika kita jalankan code diatas tidak error dan memang tidak ada masalah 
 Sampai sini apa kalian sudah paham tentang `global execution context`? apa justru pusing karena terlihat bolak balik :D tenang akan saya berikan satu contoh lagi sebagai berikut:
 
 ```javascript
-//javascript akan melakukan creation phase pada global execution context dan menghoisting isi function a
+/*javascript akan melakukan creation phase pada global execution context dan menghoisting isi function a */
 function a() {
-  // creation phase: pada local execution context dan menghoisting function b
-  console.log("ini a") // execution phase: Menjalankan console.log ('ini a') dan tampil ke layar 'ini a' lalu loncat ke function 'b' dan membuat local Execution Context.
+  /* execution phase: Menjalankan console.log ('ini a') dan tampil ke layar 'ini a' lalu loncat ke function 'b' dan membuat local Execution Context. */
+  console.log("ini a")
+
+  /* creation phase: pada local execution context dan menghoisting function b */
   function b() {
-    // creation phase: pada local execution context dan menghoisting function c
-    console.log("ini b") // execition phase: Menjalankan console.log ('ini b') dan tampil ke layar 'ini b' lalu loncat ke function c dan membuat local Execution Context.
+    /* creation phase: pada local execution context dan menghoisting function c */
     function c() {
-      //tidak terjadi creation phase karena tidak ada function atau variabel dalam function c
-      console.log("ini c") // Execution phase : Menjalankan console.log ('ini c') dan tampil ke layar 'ini c'.
+      /* tidak terjadi creation phase karena tidak ada function atau variabel dalam function c */
+
+      /* Execution phase : Menjalankan console.log ('ini c') dan tampil ke layar 'ini c'. */
+      console.log("ini c")
     }
-    c() //menjalankan function c pada saat execution phase
+    /* execition phase: Menjalankan console.log ('ini b') dan tampil ke layar 'ini b' lalu loncat ke function c dan membuat local Execution Context. */
+    console.log("ini b")
+
+    // menjalankan function c pada saat execution phase
+    c()
     // function c selesai dijalankan
   }
-  b() ////menjalankan function b pada saat execution phase
+  b() // menjalankan function b pada saat execution phase
   // function b selesai dijalankan
 }
 
 a() //menjalankan function a pada saat execution phase
+
 //function a selesai dijalankan
 ```
 
@@ -163,8 +182,12 @@ Scope jika diartikan kedalam bahasa indonesia artinya "cakupan atau jangkauan", 
   function evolution() {
     // inisiasi variabel local, "local scope variable"
     var digimon1 = "Greymon"
-    console.log(`ini digimon-1 dalam function/local scope:${digimon1}`) // mengambil variabel dari `local/function scope`
-    console.log(`ini digimon-2 dalam global scope :${digimon2}`) // mengambil variabel dari `global scope`
+
+    // mengambil variabel dari `local/function scope`
+    console.log(`ini digimon-1 dalam function/local scope:${digimon1}`)
+
+    // mengambil variabel dari `global scope`
+    console.log(`ini digimon-2 dalam global scope :${digimon2}`)
   }
 
   // Show the result

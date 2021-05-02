@@ -34,11 +34,13 @@ Lihat contoh berikut:
 
 ```javascript
 function init() {
-  let nama = "Haxor" // nama adalah sebuah lokal variabel yang dibuat oleh init
+  // nama adalah sebuah lokal variabel yang dibuat oleh init
+  let nama = "Haxor"
 
   // displayName() adalah inner function, sebuah closure
   function displayName() {
-    console.log(nama) // displayName() mengakses parent scopenya dengan menggunakan variabel yang dideklarasikan pada parent scopenya.
+    /* displayName() mengakses parent scopenya dengan menggunakan variabel yang dideklarasikan pada parent scopenya.*/
+    console.log(nama)
   }
   displayName()
 }
@@ -55,11 +57,13 @@ Perhatikan kode berikut:
 
 ```javascript
 function init(umur) {
-  let nama = "Haxor" // nama adalah sebuah lokal variabel yang dibuat oleh init
+  // nama adalah sebuah lokal variabel yang dibuat oleh init
+  let nama = "Haxor"
 
   // displayName() adalah inner function, sebuah closure
   function displayName() {
-    console.log(nama) // displayName() mengakses parent scopenya dengan menggunakan variabel yang dideklarasikan pada parent scopenya.
+    /* displayName() mengakses parent scopenya dengan menggunakan variabel yang dideklarasikan pada parent scopenya.*/
+    console.log(nama)
     console.log(umur)
   }
   console.dir(displayName)
@@ -77,8 +81,10 @@ function init() {
 
   // displayName() adalah inner function, sebuah closure
   function displayName() {
+    /* displayName() tidak mengakses parent scopenya tapi menggunakan variabel yang dideklarasikan pada scopenya.*/
     let nama = "Andre"
-    console.log(nama) // displayName() mengakses parent scopenya dengan menggunakan variabel yang dideklarasikan pada parent scopenya.
+
+    console.log(nama)
   }
   console.dir(displayName)
 }
