@@ -10,10 +10,13 @@ tags:
   - you don't know
 template: "post"
 thumbnail: "../thumbnails/javascript.png"
+imageheader: "../images/closures/image-og.jpeg"
 author: "Muhammad Fahri"
 ---
 
 # Closures
+
+![Closures](../images/closures/image-og.jpeg)
 
 Closures adalah inner function yang mempunyai akses ke parent scopenya, dan scope-scope di function luar lainnya, meskipun parent scopenya sudah selesai dieksekusi.
 

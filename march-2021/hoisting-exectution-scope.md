@@ -10,10 +10,13 @@ tags:
   - you don't know
 template: "post"
 thumbnail: "../thumbnails/javascript.png"
+imageheader: "../images/hoisting-scope-closure/image-og.jpeg"
 author: "Muhammad Fahri"
 ---
 
 # Hoisting
+
+![hescope](../images/hoisting-scope-closure/image-og.jpeg)
 
 Hoisting jika diartikan kedalam bahasa indonesia artinya "mengangkat,mengerek atau menaikan" yups hoisting merupakan konsep dalam javascript dimana iya akan menaikkan atau mengerek seluruh deklarasi `function` dan `variabel` kebagian atas code program ketika di eksekusi, tapi yang harus dipahami disini adalah javascript tidak benar-benar memindahkan `variabel` dan `function` ke bagian atas codingan kita melainkan hanya memindahkan deklarasinya saja bukan inisiasinya.
 
