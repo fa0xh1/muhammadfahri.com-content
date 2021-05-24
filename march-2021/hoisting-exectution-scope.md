@@ -1,6 +1,5 @@
 ---
 title: "Hoisting,Execution Context Dan Scope"
-cover: "8.jpg"
 date: "2021-03-01"
 categories: ["intermediate"]
 slug: "hoisting-execution-scope"
@@ -10,7 +9,7 @@ tags:
   - you don't know
 template: "post"
 thumbnail: "../thumbnails/javascript.png"
-imageheader: "../images/hoisting-scope-closure/image-og.jpeg"
+cover: "../images/hoisting-scope-closure/image-og.jpeg"
 author: "Muhammad Fahri"
 ---
 

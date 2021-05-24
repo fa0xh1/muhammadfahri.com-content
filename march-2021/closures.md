@@ -1,6 +1,5 @@
 ---
 title: "Closures"
-cover: "8.jpg"
 date: "2021-03-10"
 categories: ["intermediate", "popular"]
 slug: "closures"
@@ -10,7 +9,7 @@ tags:
   - you don't know
 template: "post"
 thumbnail: "../thumbnails/javascript.png"
-imageheader: "../images/closures/image-og.jpeg"
+cover: "../images/closures/image-og.jpeg"
 author: "Muhammad Fahri"
 ---
 
