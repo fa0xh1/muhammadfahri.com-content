@@ -14,9 +14,9 @@ cover: "../images/array-pointer-struct/image-og.jpg"
 author: "Muhammad Fahri"
 ---
 
-# Array
-
 ![array](../images/array-pointer-struct/image-og.jpg)
+
+# Array
 
 Array atau larik adalah variabel yang terdiri dari sekumpulan data terstruktur yang mempunyai tipe data yang sama. Setiap data disimpan di alamat memori yang berbeda-beda yang disebut dengan elemen array. Setiap elemen mempunyai nilai index sesuai urutannya. melalui index inilah kita dapat mengakses data-data tersebut. Umumnya index dari elemen array dimulai dari 0.
 
