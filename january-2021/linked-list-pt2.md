@@ -14,6 +14,8 @@ cover: "../images/linked-list-pt2/image-og.jpg"
 author: "Muhammad Fahri"
 ---
 
+![cover](../images/linked-list-pt2/image-og.jpg)
+
 # Double Linked List
 
 Pada artikel sebelumnya kita telah membahas Single Linked List, yakni linked list dengan sebuah pointer penghubung. Dalam artikel ini, dibahas pula varian linked list dengan 2 pointer penunjuk, yakni Double linked list yang memilki pointer penunjuk 2 arah, yakni ke arah node sebelum (previos/prev) dan node sesudah (next).

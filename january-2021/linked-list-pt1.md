@@ -14,6 +14,8 @@ cover: "../images/linked-list-pt1/image-og.jpg"
 author: "Muhammad Fahri"
 ---
 
+![cover](../images/linked-list-pt1/image-og.jpg)
+
 # Single Linked List
 
 Single Linked List adalah sekumpulan dari node yang saling terhubung dengan node lain melalui sebuah pointer. Single Linked List hanya memiliki satu arah. Node disini merupakan sekelompok data yang diorganisasi secara dinamis dengan urutan tertentu.
