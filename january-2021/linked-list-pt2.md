@@ -18,7 +18,7 @@ author: "Muhammad Fahri"
 
 # Double Linked List
 
-Pada artikel sebelumnya kita telah membahas Single Linked List, yakni linked list dengan sebuah pointer penghubung. Dalam artikel ini, dibahas pula varian linked list dengan 2 pointer penunjuk, yakni Double linked list yang memilki pointer penunjuk 2 arah, yakni ke arah node sebelum (previos/prev) dan node sesudah (next).
+Pada artikel sebelumnya kita telah membahas Single Linked List, yakni linked list dengan sebuah pointer penghubung. Dalam artikel ini, dibahas pula varian linked list dengan 2 pointer penunjuk, yakni Double linked list yang memilki pointer penunjuk 2 arah,<br>yakni ke arah node sebelum (previos/prev) dan node sesudah (next).
 
 - Elemen-elemen dihubungkan dengan dua pointer dalam satu elemen.
 - List bisa melintas baik ke depan maupun ke belakang.
